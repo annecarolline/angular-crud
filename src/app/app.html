@@ -1,0 +1,32 @@
+<main class="main">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-1 flex justify-between items-center">
+            <a href="#" class="font-body text-xl font-bold gradient-text animate-pulse-slow tracking-tight">Angular CRUD</a>
+            
+            <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+                <div class="hidden font-bold md:flex items-center gap-8">
+                    <a href="#" class="nav-link font-display font-medium text-sm tracking-wide hover:animate-float">Início</a>
+                    <a href="produto" class="nav-link font-display font-medium text-sm tracking-wide hover:animate-float transition-colors">Lista de Produtos</a>
+                    <a href="produto/create" class="nav-link font-display font-medium text-sm tracking-wide hover:animate-float transition-colors">Novo Produto</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 glass-strong rounded-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden font-bold md:hidden glass border-t border-purple-500/20">
+            <div class="px-6 py-4 flex flex-col gap-4">
+                <a href="#" class="font-display font-medium">Início</a>
+                <a href="produto" class="font-display font-medium">Produtos</a>
+            </div>
+        </div>
+    </nav>
+</main>
+<router-outlet />

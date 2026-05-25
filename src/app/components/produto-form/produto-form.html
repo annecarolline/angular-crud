@@ -1,0 +1,33 @@
+<div class="form-container">
+    <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">{{ isEdit ? "Atualizar Produto" : "Novo Produto"}}</h1>
+    
+    <div class="form-group">
+	    <form [formGroup]="produtoForm"  (ngSubmit)="onSubmit()">
+			<label for="nome">Nome:</label>
+			<input type="text" id="nome" formControlName="nome" required>
+
+			<label for="categoria">Categoria:</label>
+			<select id="categoria" formControlName="categoria" required>
+                @for (categoria of filtrarCategorias(); track categoria.id; let i = $index) {
+					<option value="{{categoria.nome}}">{{categoria.nome}}</option>
+				} 
+				@empty {
+					<option value="">Selecione a Categoria</option>
+				}
+			</select>
+
+			<label for="preco">Preço:</label>
+			<input type="number" id="preco" formControlName="preco" required>
+
+			<p class="label">Status:</p>
+			<label for="ativo">
+			<input type="radio" id="ativo" value="ativo" formControlName="status" required>Ativo</label>
+			<label for="inativo">
+			<input type="radio" id="inativo" value="inativo" formControlName="status" required>Inativo</label>
+
+			<div class="button-group">
+				<button style="width: 15%;" class="btn-info rounded-full font-semibold" type="submit">Salvar</button>
+			</div>
+	    </form>
+    </div>
+</div>

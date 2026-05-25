@@ -1,0 +1,42 @@
+<div class="form-container">
+    <h1 class="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">Lista de Produtos</h1>
+
+    <mat-form-field appearance="outline" class="w-full search-field">
+	    <mat-label>Pesquisa</mat-label>
+	    <input matInput [(ngModel)]="pesquisa" placeholder="Produto 1" />
+  		<mat-icon>search-field</mat-icon>
+  	</mat-form-field>
+    
+    <table>
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Nome</th>
+				<th>Categoria</th>
+				<th>Preço</th>
+				<th>Status</th>
+				<th> - </th>
+			</tr>
+		</thead>
+		<tbody>
+			@for (produto of filtrarProdutos(); track produto.id; let i = $index) {
+			<tr>
+				<td>{{ i + 1}}</td>
+				<td>{{ produto.nome }}</td>
+				<td>{{ produto.categoria }}</td>
+				<td>{{ produto.preco }}</td>
+				<td>{{ produto.status }}</td>
+				<td class="btn-container">
+					<button [routerLink]="['edit', produto.id]" class="rounded-full font-semibold">Editar</button>
+					<button (click)="deleteProduto(produto.id)" class="btn-danger rounded-full font-semibold">Excluir</button>
+				</td>
+			</tr>
+		} 
+		@empty {
+			<tr>
+			  	<td colspan="5">Nenhum produto foi encontrado.</td>
+			</tr>
+		}
+		</tbody>
+    </table>
+</div>

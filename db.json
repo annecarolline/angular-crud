@@ -1,0 +1,80 @@
+{
+  "produto": [
+    {
+      "nome": "Produto 1",
+      "categoria": "Categoria 2",
+      "preco": "13.13",
+      "status": "ativo",
+      "id": "1"
+    },
+    {
+      "nome": "Produto 2",
+      "categoria": "Categoria 2",
+      "preco": 50,
+      "status": "inativo",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "nome": "Produto 3",
+      "categoria": "Categoria 1",
+      "preco": 75,
+      "status": "ativo"
+    },
+    {
+      "id": "4",
+      "nome": "Produto 4",
+      "categoria": "Categoria 2",
+      "preco": 130,
+      "status": "ativo"
+    },
+    {
+      "nome": "Produto 5",
+      "categoria": "Categoria 1",
+      "preco": "537.00",
+      "status": "ativo",
+      "id": "5"
+    },
+    {
+      "nome": "Produto 6",
+      "categoria": "Categoria 2",
+      "preco": "243.00",
+      "status": "ativo",
+      "id": "6"
+    },
+    {
+      "nome": "Produto 7",
+      "categoria": "Categoria 1",
+      "preco": "352.00",
+      "status": "ativo",
+      "id": "7"
+    },
+    {
+      "nome": "Produto 8",
+      "categoria": "Categoria 2",
+      "preco": "275.00",
+      "status": "ativo",
+      "id": "8"
+    },
+    {
+      "nome": "Teste 1",
+      "categoria": "Categoria 1",
+      "preco": 164.9,
+      "status": "ativo",
+      "id": "n2CWpKjJvrM"
+    }
+  ],
+  "categoria": [
+    {
+      "id": "1",
+      "nome": "Categoria 1",
+      "status": "ativo"
+    },
+    {
+      "id": "2",
+      "nome": "Categoria 2",
+      "status": "ativo"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

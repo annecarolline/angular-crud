@@ -1,0 +1,176 @@
+@use 'tailwindcss';
+/* Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming*/
+@use '@angular/material' as mat;
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+    @include mat.theme((
+        color: (
+            primary: mat.$violet-palette,
+            tertiary: mat.$magenta-palette,
+        ),
+        typography: (
+            plain-family: Roboto,
+            brand-family: Open Sans,
+            bold-weight: 900,
+            medium-weight: 500,
+            regular-weight: 300,
+        ),
+        density: 0,
+    ));
+}
+
+body {
+    /* Default the application to a light color theme. This can be changed to
+    // `dark` to enable the dark color theme, or to `light dark` to defer to the
+    // user's system settings.*/
+    color-scheme: light dark;
+
+    /* Set a default background, font and text colors for the application using
+    // Angular Material's system-level CSS variables. Learn more about these
+    // variables at https://material.angular.dev/guide/system-variables*/
+    background-color: var(--mat-sys-surface-container-low);/*var(--mat-sys-surface);*/
+    color: var(--mat-sys-on-surface);
+    font: var(--mat-sys-body-medium);
+    margin: 0;
+    height: 100%;
+}
+
+.glass {
+    background: var(--mat-sys-surface-container-low);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--mat-sys-surface-container-low);
+    box-shadow: 0 8px 32px 0 var(--mat-sys-surface-container-low);
+}
+
+nav a:hover{
+    color: var(--mat-sys-on-primary-container);
+}
+
+.form-container {
+    width: 90%; 
+    padding: 15px;
+    background: var(--mat-sys-on-secondary);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10% 5% 3% 5%;
+}
+
+.landing-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+label, .label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="radio"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--mat-sys-on-primary-container);
+    border-radius: 5px;
+    font-size: 13pt;
+    resize: vertical;
+}
+
+select option {
+    background-color: var(--mat-sys-on-secondary);
+}
+
+select option:hover,
+select option:checked {
+    background-color: var(--mat-sys-on-tertiary-container) !important;
+}
+
+input[type="radio"] {
+    float: left;
+    width: 5%;
+}
+
+button {
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 13pt;
+    background-color: var(--mat-sys-on-primary-container);
+    border: none;
+    color: var(--mat-sys-on-primary);
+    cursor: pointer;
+}
+
+button:hover {
+    color: var(--mat-sys-tertiary-container);
+    background-color: var(--mat-sys-tertiary);
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0 1.5rem 0;
+}
+
+.errormessage {
+    color: var(--mat-sys-error);
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid var(--mat-sys-on-primary-fixed);
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--mat-sys-on-primary-fixed);
+    font-size: 13px;
+}
+th {
+    background-color: var(--mat-sys-on-primary-container);
+    color: var(--mat-sys-on-primary);
+}
+
+tr:hover {
+    background-color: var(--mat-sys-tertiary-container); 
+    color: var(--mat-sys-tertiary);
+}
+
+.btn-danger {
+    background-color: var(--mat-sys-error);
+    color: var(--mat-sys-error-container);
+}
+.btn-danger:hover {
+    background-color: var(--mat-sys-error-container);
+    color: var(--mat-sys-error);
+}
+.btn-info {
+    background-color: var(--mat-sys-tertiary);
+}
+.btn-info:hover {
+    background-color: var(--mat-sys-tertiary-container);
+    color: var(--mat-sys-tertiary);
+}
+.btn-container {
+    display: flex;
+    gap: 10px;
+}
